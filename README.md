@@ -2,7 +2,7 @@
 ## This is test-temp for test temp
 
 # Code:
-
+Test temperature:
 
 ```
 #!/bin/bash
@@ -25,4 +25,16 @@ temp() {
 
 temp
 
+```
+Wifi connection:
+```
+wpa_supplicant -B -Dnl80211 -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
+
+dhclient wlan0 # use udhcpc -i wlan0 if dhclient is not present
+
+if ping -c 1 google.com &> /dev/null; then
+    echo "Connection exists."
+else
+    echo "No connection."
+fi
 ```
